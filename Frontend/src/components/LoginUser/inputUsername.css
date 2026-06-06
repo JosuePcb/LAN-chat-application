@@ -1,0 +1,84 @@
+form {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    max-width: 360px;
+    width: 90%;
+    padding: 32px;
+    border-radius: 12px;
+    background: #181b22;
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    box-shadow: 
+        0 10px 25px -5px rgba(0, 0, 0, 0.3),
+        0 8px 10px -6px rgba(0, 0, 0, 0.3),
+        0 25px 50px -12px rgba(0, 0, 0, 0.5);
+    box-sizing: border-box;
+    margin: 0 auto;
+    
+    /* Centrar en pantalla */
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+label {
+    font-size: 13px;
+    font-weight: 500;
+    color: var(--text-secondary);
+    letter-spacing: 0.8px;
+    text-transform: uppercase;
+    text-align: left;
+}
+
+label:not(:first-of-type) {
+    margin-top: 12px;
+}
+
+input[type="text"],
+input[type="password"] {
+    width: 100%;
+    padding: 10px 0;
+    font-size: 16px;
+    color: #ffffff;
+    background: transparent;
+    border: none;
+    border-bottom: 1.5px solid var(--border-color);
+    border-radius: 0;
+    outline: none;
+    box-sizing: border-box;
+    transition: border-color 0.2s ease;
+}
+
+input[type="text"]:hover,
+input[type="password"]:hover {
+    border-bottom-color: rgba(255, 255, 255, 0.2);
+}
+
+input[type="text"]:focus,
+input[type="password"]:focus {
+    border-bottom-color: var(--color-primary);
+}
+
+button {
+    width: 100%;
+    padding: 12px;
+    font-size: 14px;
+    font-weight: 600;
+    color: #131519;
+    background: var(--text-primary);
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: opacity 0.2s ease, transform 0.1s ease;
+    margin-top: 16px;
+    letter-spacing: 0.5px;
+}
+
+button:hover {
+    opacity: 0.9;
+}
+
+button:active {
+    transform: scale(0.98);
+}
