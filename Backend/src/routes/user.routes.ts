@@ -9,7 +9,7 @@ const router: any = express.Router();
 router.post("/login", async (req: Request, res: Response): Promise<any> => {
 
     try {
-        const { username, password }:String = req.body;
+        const { username, password } = req.body;
 
         const user = await users.findOne({ where: { username: username } }); //BUSCA AL USUARIO EN LA BASE DE DATOS Y LO ASIGNA A LA VARIABLE USER
 
