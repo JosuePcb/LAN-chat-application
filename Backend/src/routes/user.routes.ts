@@ -16,11 +16,11 @@ router.post("/login", async (req: Request, res: Response): Promise<any> => {
         if (!user) {
             return res
                 .status(401)
-                .json({ message: "Usuario o contraseña incorrectos" }); //SI NO CONSIGUE AL USUARIO DEVUELVE EL ERROR
+                .json({ message: "Usuario o contraseña incorrectos" }); //SI NO CONSIGUE AL USUARIO DEVUELVE EL CODIGO 401
         }
 
         if (user.getDataValue("hash_password") !== password) {
-            return res.status(401).json({ message: "Usuario o contraseña" });
+            return res.status(401).json({ message: "Usuario o contraseña" }); // SI NO CONSIGUE AL USUARIO DEVUELVE EL CODIGO 401
         }
 
         return res.status(200).json({
