@@ -1,28 +1,32 @@
 import { sequelize } from "../config/database.js";
 import { DataTypes } from "sequelize";
 
-const users = sequelize.define("Users", {
-    id_user: {
-        type: DataTypes.INTEGER,
-        autoIncrement: true,
-        primaryKey: true,
-    },
+const users = sequelize.define(
+    "Users",
+    {
+        id_user: {
+            type: DataTypes.INTEGER,
+            autoIncrement: true,
+            primaryKey: true,
+        },
 
-    username: {
-        type: DataTypes.STRING(20),
-        allowNull: false,
-    },
+        username: {
+            type: DataTypes.STRING(20),
+            allowNull: false,
+        },
 
-    hash_password: {
-        type: DataTypes.STRING,
-        allowNull: false,
-    },
+        hash_password: {
+            type: DataTypes.STRING,
+            allowNull: false,
+        },
 
-    ip: {
-        type: DataTypes.STRING,
-        allowNull: true,
+        ip: {
+            type: DataTypes.STRING,
+            allowNull: true,
+        },
     },
-});
+    { timestamps: false },
+);
 
 const messages = sequelize.define("Messages", {
     id_message: {

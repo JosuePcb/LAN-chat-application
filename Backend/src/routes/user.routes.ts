@@ -1,13 +1,42 @@
 import "dotenv/config";
 import express, { Request, Response, NextFunction } from "express";
 
-const app = express();
+import { users } from "../models/models.js"
 
-// typescript typeshit
+const router: any = express.Router();
 
-declare global {
-    namespace Express {
-        interface Request { 
+
+router.post("/login", async (req: Request, res: Response): Promise<any> => {
+
+    try {
+        const { username, password }:String = req.body;
+
+        const user = await users.findOne({ where: { username: username } }); //BUSCA AL USUARIO EN LA BASE DE DATOS Y LO ASIGNA A LA VARIABLE USER
+
+        if (!user) {
+            return res
+                .status(401)
+                .json({ message: "Usuario o contraseña incorrectos" }); //SI NO CONSIGUE AL USUARIO DEVUELVE EL ERROR
         }
+
+        if (user.getDataValue("hash_password") !== password) {
+            return res.status(401).json({ message: "Usuario o contraseña" });
+        }
+
+        return res.status(200).json({
+            message: "Login Exitoso",
+            user: {
+                id: user.getDataValue("id_user"),
+                username: user.getDataValue("username"),
+            },
+        });
+
+    } catch (err) {
+        console.error("Error recibiendo datos", err);
+        return res.status(500).json({ message: "Error interno del servidor" });
     }
-}
+    
+
+});
+
+export default router
