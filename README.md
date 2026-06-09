@@ -1,6 +1,6 @@
 # LAN Real Time Chat
 
-I'll progressly update this readme kekw.
+The idea behind this project, beyond its functionalities themselves, is to improve my skills in creating scalable and fully modular code.
 
 ## How to create a postgresql container?
 
