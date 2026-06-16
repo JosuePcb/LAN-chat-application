@@ -4,9 +4,9 @@ The idea behind this project, beyond its functionalities themselves, is to impro
 
 ## What do i need to finish
 
-[ ] The chat lol (im reading about websockets)
-[ ] Chat design
-[ ] Finish register feature
+- [ ] The chat lol (im reading about websockets)
+- [ ] Chat design
+- [ ] Finish register feature
 
 ## How to create a postgresql container for this project?
 
