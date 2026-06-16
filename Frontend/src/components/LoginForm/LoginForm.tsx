@@ -48,7 +48,7 @@ function LoginForm() {
 
             const result = await response.json(); // Respuesta del servidor, devuelve user: { id: id_user, username: username }
 
-            
+
             setShowLoginInput(false); // Se cambia el estado del componente para que no se muestre
 
         } catch (err: any) {

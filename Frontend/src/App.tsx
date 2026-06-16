@@ -1,15 +1,18 @@
 import "./App.css";
+import { ChatArea } from "./components";
 
 
 // Componentes
-import { LoginForm } from "./components";
 
 function App() {
+
+
+
   return (
     <>
-      <LoginForm />
+      <ChatArea />
     </>
-  )
+  );
 }
 
 export default App;

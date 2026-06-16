@@ -14,7 +14,7 @@
   "devEngines": {
     "packageManager": {
       "name": "pnpm",
-      "version": "^11.5.0",
+      "version": "11.6.0",
       "onFail": "download"
     }
   },
@@ -27,6 +27,7 @@
     "typescript": "^6.0.3"
   },
   "dependencies": {
+    "bcrypt": "^6.0.0",
     "bcryptjs": "^3.0.3",
     "cors": "^2.8.6",
     "dotenv": "^17.4.2",

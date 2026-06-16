@@ -1,21 +1,20 @@
 import "dotenv/config";
 import express from "express";
+import { createServer } from "node:http";
 import cors from "cors";
 
 // Importar la inicializacion de Postgres
 import { sequelize } from "./config/database.js";
 
 // Importar las Rutas de RestAPI
-import "./routes/user.routes.js"
+import userRoutes from "./routes/userRoutes.js";
 
 // Importar Modelos de la base de datos
 import "./models/models.js"
 
-import userRoutes from "./routes/user.routes.js";
 
-
-
-const app = express();
+const app  = express();
+const httpServer = createServer(app);
 const PORT = process.env.PORT;
 
 
@@ -35,10 +34,11 @@ const startServer = async () => {
         console.error("Unable to connect to the database:", err);
     }
 
-    // Api Rest
-
-    app.use(cors());
+    // Middleware
+    app.use(cors()); 
     app.use(express.json());
+    
+    // Routes
     app.use(userRoutes);
 
 
